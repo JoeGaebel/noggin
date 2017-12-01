@@ -1,3 +1,3 @@
 require("font-awesome-webpack");
-require('./style.less');
-require("./application.js");
+require('./src/style.less');
+require("./src/application.js");
