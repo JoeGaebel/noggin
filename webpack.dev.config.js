@@ -1,8 +1,12 @@
+const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  devServer: { port: process.env.PORT || "8888" },
-  entry: './entry.js',
+  devtool: 'eval',
+  entry: [
+    'webpack-hot-middleware/client',
+    './entry.js'
+  ],
   output: {
     filename: './bundle.js'
   },
@@ -10,9 +14,10 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
   ],
-  watch: true,
   module: {
     loaders: [{
       test: /\.js$/,
