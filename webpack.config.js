@@ -1,7 +1,9 @@
 const webpack = require('webpack');
+const host = process.env.HOST || "127.0.0.1";
+const port = process.env.PORT || "8888";
 
 module.exports = {
-  devServer: { port: process.env.PORT || 8080 },
+  devServer: { port, host },
   entry: './entry.js',
   output: {
     filename: './bundle.js'
