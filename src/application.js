@@ -3,7 +3,7 @@ class Application {
     $(this.onReady);
   }
 
-  onReady() { }
+  onReady() { console.log("Oh noooee"); }
 }
 
 

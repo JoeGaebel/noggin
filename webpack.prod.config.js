@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -13,10 +14,7 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      compress: { warnings: false }
-    }),
+    new UglifyJSPlugin(),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
