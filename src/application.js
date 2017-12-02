@@ -38,7 +38,7 @@ class Application {
     let lastDate = moment("1970");
 
     events.forEach(event => {
-      if (event.date > lastDate) {
+      if (event.date.isAfter(lastDate, 'day')) {
         let day;
 
         if (event.date.isSame(today, 'day')) { day = new Day({ text: 'Today' }) }
