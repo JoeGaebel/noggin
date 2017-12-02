@@ -1,4 +1,6 @@
+import moment from 'moment';
 import Event from './event';
+import Day from './day';
 import { events as eventFixtures } from './fixtures';
 
 class Application {
@@ -25,10 +27,29 @@ class Application {
   }
 
   populateEvents(){
-    eventFixtures.forEach(event => {
-      let model = new Event(event);
-      this.ui.timeline.append(model.render());
+    let events = eventFixtures.map(fixture => {
+      return new Event(fixture);
     });
+
+    events.sort((a, b) => { return a.date - b.date; });
+    const today = moment();
+    const tomorrow = moment().add(1,'days');
+
+    let lastDate = moment("1970");
+
+    events.forEach(event => {
+      if (event.date > lastDate) {
+        let day;
+
+        if (event.date.isSame(today, 'day')) { day = new Day({ text: 'Today' }) }
+        else if (event.date.isSame(tomorrow, 'day')) { day = new Day({ text: 'Tomorrow' }) }
+        else { day = new Day({ text: event.date.format('DDDD') }); }
+
+        this.ui.timeline.append(day.render());
+        lastDate = event.date;
+      }
+      this.ui.timeline.append(event.render());
+    })
   }
 
   // Events

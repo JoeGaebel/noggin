@@ -9,7 +9,7 @@ export const people = {
 
 export const events = [
   {
-    date: "13:30 12-04-2017",
+    date: "13:30 12-03-2017",
     type: "meeting",
     title: "The Grove w/ Andrew",
     description: "Andrew and I are going to go the grove, as per usual",
@@ -17,10 +17,10 @@ export const events = [
     person: people.andrew
   },
   {
-    date: "9:00 12-03-2017",
+    date: "9:00 12-02-2017",
     type: "appointment",
     title: "My birthday",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed laoreet risus, et viverra eros. Sed at augue dictum, sodales quam id, placerat metus. Curabitur ut magna neque. Nam",
+    description: "A few friends and I are heading to the bar to celebrate. El Rio!",
     author: "Joe Gaebel",
   }
 ];
