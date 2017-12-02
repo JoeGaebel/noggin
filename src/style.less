@@ -1,5 +1,25 @@
-@background-color: lightblue;
+@headerHeight: 200px;
+
+#root {
+}
 
 body {
-  background: @background-color;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: blue;
+  height: @headerHeight;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  font-size: 400pt;
+}
+
+.timeline {
+  padding-top: @headerHeight;
+  background-color: red;
+  width: 100%;
+  min-height: ~"calc(100vh - @{headerHeight})"
 }

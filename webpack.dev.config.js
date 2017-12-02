@@ -7,11 +7,7 @@ module.exports = {
     'webpack-hot-middleware/client',
     './entry.js'
   ],
-  output: {
-    path: path.join(__dirname, 'public'),
-    filename: 'bundle.js',
-    publicPath: '/public/'
-  },
+  output: { filename: 'public/bundle.js' },
   plugins: [
     new webpack.ProvidePlugin({
       $: "jquery",
