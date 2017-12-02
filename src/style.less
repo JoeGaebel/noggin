@@ -4,7 +4,7 @@
 }
 
 @headerHeight: 200px;
-@headerSpacing: 300px;
+@headerSpacing: 350px;
 @headerBorder: #D9DADD;
 @headerBarColor: #E7E8E9;
 @headerDisplacement: ~"calc(@{headerHeight} + 70px)";
@@ -16,6 +16,9 @@
 @backgroundColor: #FAFAFB;
 @fontColor: #939597;
 @clientNameColor: #E54C3B;
+
+@checkIconColor: #36AB96;
+@xIconColor: #4F5D6A;
 
 body, #root {
   margin: 0;
@@ -43,10 +46,10 @@ body, #root {
   height: @headerHeight;
   width: ~"calc(100vw - calc(2 * @{headerSpacing}))";
   position: fixed;
-  top: 20px;
+  top: 35px;
   left: @headerSpacing;
   border-radius: 10px;
-  border: 3px @headerBorder solid;
+  border: 2px @headerBorder solid;
   min-width: 700px;
   z-index: 2;
 }
@@ -54,29 +57,51 @@ body, #root {
 .header-bar {
   color: @fontColor;
   background-color: @headerBarColor;
-  height: 40px;
-  border-bottom: 3px @headerBorder solid;
+  height: 50px;
+  border-bottom: 2px @headerBorder solid;
   border-radius: 7px 7px 0 0;
   display: flex;
 
-  .number-author, .client-name {
-    flex-grow: 4;
+  .number-author, .icons {
+    flex-grow: 1;
+  }
+
+  .client-name {
+    flex-grow: 2;
+    padding-right: 36px;
   }
 
   .number-author {
-    font-size: 14px;
+    font-size: 15px;
+    padding-left: 7px;
+    padding-top: 9px;
+    font-weight: 400;
   }
 
   .icons {
-    flex-grow: 1;
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 40px;
+
+    .check-icon, .x-icon {
+      padding-right: 5px;
+    }
+
+    .check-icon {
+      color: @checkIconColor;
+    }
+
+    .x-icon {
+      color: @xIconColor
+    }
   }
 
   .client-name {
     color: @clientNameColor;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 900;
+    text-align: center;
   }
 }
 
