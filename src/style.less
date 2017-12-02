@@ -24,6 +24,13 @@ body, #root {
   padding: 0;
   background-color: @backgroundColor;
   font-family: "aphont";
+  min-width: 1300px;
+}
+
+.line {
+  position: fixed;
+  top: 227px;
+  left: 49.6%;
 }
 
 .header {
@@ -35,6 +42,7 @@ body, #root {
   left: @headerSpacing;
   border-radius: 10px;
   border: 3px @headerBorder solid;
+  min-width: 700px;
 }
 
 .header-bar {
@@ -52,7 +60,8 @@ body, #root {
   min-height: @timelineMinHeight;
   display: flex;
   flex-direction: column;
-  margin: @headerDisplacement @headerSpacing 0 @headerSpacing;
+  margin-top: @headerDisplacement;
+  //margin: @headerDisplacement @headerSpacing 0 @headerSpacing;
 }
 
 .lightbox {

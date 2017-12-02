@@ -47,24 +47,27 @@ export default class Event {
         
         <div class="right-panel">
           <div class="container">
-            <div class="date-display">
-              <div class="date">${this.getDate()}</div>
-              <div class="day-month-year">
-                <div class="day">${this.getDay()}</div>
-                <div class="month-year">${this.getMonthYear()}</div>
+            <div class="data-panel">
+              <div class="date-display">
+                <div class="date">${this.getDate()}</div>
+                <div class="day-month-year">
+                  <div class="day">${this.getDay()}</div>
+                  <div class="month-year">${this.getMonthYear()}</div>
+                </div>
+              </div>
+              
+              <div class="title">
+                 <i class="title-icon fa fa-info-circle" aria-hidden="true"></i>
+                <div class="title-text">${this.title}</div>
+              </div>
+              
+              <div class="description">
+                <i class="description-icon fa fa-pencil" aria-hidden="true"></i>
+                <div class="description-text">${this.description}</div>
               </div>
             </div>
-          
-            <div class="title">
-               <i class="title-icon fa fa-info-circle" aria-hidden="true"></i>
-              <div class="title-text">${this.title}</div>
-            </div>
-            <div class="description">
-              <i class="description-icon fa fa-pencil" aria-hidden="true"></i>
-              <div class="description-text">${this.description}</div>
-            </div>
+            <div class="author">by ${this.author}</div>
           </div>
-          <div class="author">by ${this.author}</div>
         </div>
       </div> 
     `
