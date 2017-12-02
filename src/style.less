@@ -52,10 +52,32 @@ body, #root {
 }
 
 .header-bar {
-  text-align: center;
+  color: @fontColor;
   background-color: @headerBarColor;
   height: 40px;
   border-bottom: 3px @headerBorder solid;
+  border-radius: 7px 7px 0 0;
+  display: flex;
+
+  .number-author, .client-name {
+    flex-grow: 4;
+  }
+
+  .number-author {
+    font-size: 14px;
+  }
+
+  .icons {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .client-name {
+    color: @clientNameColor;
+    font-size: 20px;
+    font-weight: 900;
+  }
 }
 
 .client-name {
