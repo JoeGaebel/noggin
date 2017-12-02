@@ -42,7 +42,9 @@ export default class Event {
         </div>
         
         <div class="dot">
-          <i class="fa fa-circle" aria-hidden="true"></i> 
+          <div class="dot-container">
+            <i class="fa fa-circle" aria-hidden="true"></i>
+          </div>
         </div>
         
         <div class="right-panel">

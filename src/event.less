@@ -1,6 +1,7 @@
 @thatBlueColor: #3C97D2;
 @fontColor: #939597;
 @borderColor: #E7E8EA;
+@backgroundColor: #FAFAFB;
 
 .event {
   width: 100%;
@@ -13,7 +14,13 @@
   .dot {
     color: @thatBlueColor;
     font-size: 25px;
-    padding-top: 8px;
+    padding-top: 27px;
+  }
+
+  .dot-container {
+    position: relative;
+    background-color: @backgroundColor;
+    z-index: 0;
   }
 
   .left-panel {
@@ -24,6 +31,7 @@
     flex-basis: 0;
     flex-shrink: 0;
     padding-right: 10px;
+    padding-top: 20px;
 
     .type, .event-icon {
       color: @thatBlueColor;

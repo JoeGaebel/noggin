@@ -25,11 +25,9 @@ class Application {
   }
 
   populateEvents(){
-    const eventFixture = eventFixtures[0];
-
-    Array(100).fill().forEach(_ => {
-      event = new Event(eventFixture);
-      this.ui.timeline.append(event.render());
+    eventFixtures.forEach(event => {
+      let model = new Event(event);
+      this.ui.timeline.append(model.render());
     });
   }
 
