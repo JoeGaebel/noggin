@@ -1,12 +1,26 @@
 @thatBlueColor: #3C97D2;
+@backgroundColor: #FAFAFB;
 
-.day-text {
-  background-color: @thatBlueColor;
-  color: white;
-  width: 6%;
-  text-align: center;
-  padding: 8px;
-  border-radius: 3px;
-  font-size: 21px;
-  font-weight: 900;
+.day-marker {
+  z-index: 1;
+  padding-bottom: 30px;
+
+  .container {
+    background-color: @backgroundColor;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  .text {
+    padding: 4px 0 2px 0;
+    border-radius: 3px;
+    width: 10%;
+    margin: 0 auto;
+    background-color: @thatBlueColor;
+    color: white;
+    text-align: center;
+
+    font-size: 21px;
+    font-weight: 900;
+  }
 }

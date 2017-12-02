@@ -7,8 +7,10 @@ export default class Day {
 
   render() {
     return `
-      <div class="day">
-        <div class="day-text">${this.text}</div>
+      <div class="day-marker">
+        <div class="container">
+          <div class="text">${this.text}</div>
+        </div>
       </div>
     `
   }

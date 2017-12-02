@@ -1,3 +1,8 @@
+import moment from 'moment';
+const today = moment();
+const tomorrow = moment().add(1,'days');
+const nextDay = moment().add(2,'days');
+
 export const people = {
   andrew: {
     name: "Andrew Huth",
@@ -9,7 +14,21 @@ export const people = {
 
 export const events = [
   {
-    date: "13:30 12-03-2017",
+    date: today,
+    type: "appointment",
+    title: "My birthday",
+    description: "A few friends and I are heading to the bar to celebrate. El Rio!",
+    author: "Joe Gaebel",
+  },
+  {
+    date: today.add(1, 'hour'),
+    type: "appointment",
+    title: "Code like crazy",
+    description: "Lets go!",
+    author: "Joe Gaebel",
+  },
+  {
+    date: tomorrow.add(1, 'hour'),
     type: "meeting",
     title: "The Grove w/ Andrew",
     description: "Andrew and I are going to go the grove, as per usual",
@@ -17,10 +36,10 @@ export const events = [
     person: people.andrew
   },
   {
-    date: "9:00 12-02-2017",
+    date: nextDay,
     type: "appointment",
-    title: "My birthday",
-    description: "A few friends and I are heading to the bar to celebrate. El Rio!",
+    title: "Work",
+    description: "Back to work!",
     author: "Joe Gaebel",
-  }
+  },
 ];

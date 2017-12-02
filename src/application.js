@@ -43,7 +43,7 @@ class Application {
 
         if (event.date.isSame(today, 'day')) { day = new Day({ text: 'Today' }) }
         else if (event.date.isSame(tomorrow, 'day')) { day = new Day({ text: 'Tomorrow' }) }
-        else { day = new Day({ text: event.date.format('DDDD') }); }
+        else { day = new Day({ text: event.date.format('dddd') }) }
 
         this.ui.timeline.append(day.render());
         lastDate = event.date;
