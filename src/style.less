@@ -1,25 +1,57 @@
 @headerHeight: 200px;
+@headerSpacing: 40px;
+@headerBorder: #D9DADD;
+@headerBarColor: #E7E8E9;
+@headerDisplacement: ~"calc(@{headerHeight} + @{headerSpacing})";
 
-#root {
-}
+@timelineMinHeight: ~"calc(100vh - @{headerDisplacement})";
 
-body {
+@lightboxSpacing: 20px;
+
+@backgroundColor: #FCFCFB;
+
+body, #root {
   margin: 0;
   padding: 0;
+  background-color: @backgroundColor;
 }
 
 .header {
-  background-color: blue;
+  background-color: white;
   height: @headerHeight;
-  width: 100%;
+  width: ~"calc(100vw - calc(2 * @{headerSpacing}))";
   position: fixed;
-  top: 0;
-  font-size: 400pt;
+  top: 20px;
+  left: @headerSpacing;
+  border-radius: 10px;
+  border: 3px @headerBorder solid;
+}
+
+.header-bar {
+  text-align: center;
+  background-color: @headerBarColor;
+  height: 40px;
+  border-bottom: 3px @headerBorder solid;
+}
+
+.client-name {
+  padding-top: 5px;
 }
 
 .timeline {
-  padding-top: @headerHeight;
-  background-color: red;
-  width: 100%;
-  min-height: ~"calc(100vh - @{headerHeight})"
+  min-height: @timelineMinHeight;
+  display: flex;
+  flex-direction: column;
+  margin: @headerDisplacement @headerSpacing 0 @headerSpacing;
+}
+
+.lightbox {
+  position: fixed;
+  background: white;
+  border: 3px @headerBorder solid;
+  top: @lightboxSpacing;
+  left: @lightboxSpacing;
+  width: ~"calc(100vw - calc(2 * @{lightboxSpacing}))";
+  height: 300px;
+  display: none;
 }

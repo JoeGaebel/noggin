@@ -14,7 +14,8 @@ module.exports = {
       jQuery: "jquery"
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
   ],
   module: {
     loaders: [{
