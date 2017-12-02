@@ -1,0 +1,30 @@
+@fontColor: #939597;
+
+.person {
+  display: flex;
+  flex-direction: row;
+  color: @fontColor;
+  padding-bottom: 15px;
+
+  .name-email-number {
+    padding-left: 14px;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+
+    .name {
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .email, .number {
+      font-size: 14px;
+    }
+  }
+
+  .picture img {
+    border-radius: 3px;
+    max-width: 95px;
+    height: auto;
+  }
+}

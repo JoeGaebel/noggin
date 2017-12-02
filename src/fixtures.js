@@ -2,7 +2,7 @@ export const people = {
   andrew: {
     name: "Andrew Huth",
     email: "ahuth@gmail.com",
-    number: "657 1111",
+    number: "(415) 657-1111",
     imageURL: "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAQPAAAAJGFiNjQ5ODNiLTQyNmQtNGVhZS1iODlkLTdiZDA5YzNjZWJlOA.jpg"
   }
 };

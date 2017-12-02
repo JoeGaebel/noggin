@@ -4,14 +4,15 @@ import './event.less';
 
 export default class Event {
   constructor(options = {}) {
-    const { date, type, title, description, author, personOptions } = options;
+    const { date, type, title, description, author, person } = options;
 
     this.date = moment(date);
     this.type = type || 'appointment';
     this.title = title || type;
     this.description = description || '';
     this.author = author;
-    this.person = new Person(personOptions);
+
+    if (person) this.person = new Person(person);
   }
 
   getIcon() {
@@ -57,6 +58,8 @@ export default class Event {
                   <div class="month-year">${this.getMonthYear()}</div>
                 </div>
               </div>
+              
+             ${ this.person ? this.person.render() : '' }
               
               <div class="title">
                  <i class="title-icon fa fa-info-circle" aria-hidden="true"></i>
