@@ -21,7 +21,7 @@ export const events = [
     author: "Joe Gaebel",
   },
   {
-    date: today.add(1, 'hour'),
+    date: today.clone().add(1, 'hour'),
     type: "appointment",
     title: "Code like crazy",
     description: "Lets go!",
