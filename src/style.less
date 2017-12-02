@@ -4,7 +4,7 @@
 }
 
 @headerHeight: 200px;
-@headerSpacing: 350px;
+@headerSpacing: 370px;
 @headerBorder: #D9DADD;
 @headerBarColor: #E7E8E9;
 @headerDisplacement: ~"calc(@{headerHeight} + 70px)";
@@ -57,7 +57,7 @@ body, #root {
 .header-bar {
   color: @fontColor;
   background-color: @headerBarColor;
-  height: 50px;
+  height: 58px;
   border-bottom: 2px @headerBorder solid;
   border-radius: 7px 7px 0 0;
   display: flex;
@@ -68,24 +68,24 @@ body, #root {
 
   .client-name {
     flex-grow: 2;
-    padding-right: 36px;
+    padding-right: 62px;
   }
 
   .number-author {
-    font-size: 15px;
-    padding-left: 7px;
+    font-size: 16.5px;
+    padding-left: 16px;
     padding-top: 9px;
-    font-weight: 400;
+    font-weight: 300;
   }
 
   .icons {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    font-size: 40px;
+    font-size: 36px;
 
     .check-icon, .x-icon {
-      padding-right: 5px;
+      padding-right: 7px;
     }
 
     .check-icon {
@@ -102,11 +102,8 @@ body, #root {
     font-size: 30px;
     font-weight: 900;
     text-align: center;
+    padding-top: 8px;
   }
-}
-
-.client-name {
-  padding-top: 5px;
 }
 
 .timeline {
