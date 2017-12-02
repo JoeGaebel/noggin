@@ -1,19 +1,29 @@
+@font-face {
+  font-family: 'aphont';
+  src: url('../fonts/APHont-Regular_q15c.ttf') format('truetype'),
+       url('../fonts/APHont-Bold_q15c.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 @headerHeight: 200px;
-@headerSpacing: 40px;
+@headerSpacing: 300px;
 @headerBorder: #D9DADD;
 @headerBarColor: #E7E8E9;
-@headerDisplacement: ~"calc(@{headerHeight} + @{headerSpacing})";
+@headerDisplacement: ~"calc(@{headerHeight} + 70px)";
 
 @timelineMinHeight: ~"calc(100vh - @{headerDisplacement})";
 
 @lightboxSpacing: 20px;
 
-@backgroundColor: #FCFCFB;
+@backgroundColor: #FAFAFB;
 
 body, #root {
   margin: 0;
   padding: 0;
   background-color: @backgroundColor;
+  font-family: "aphont";
 }
 
 .header {

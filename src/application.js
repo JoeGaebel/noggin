@@ -25,8 +25,10 @@ class Application {
   }
 
   populateEvents(){
-    eventFixtures.forEach(event => {
-      event = new Event(event);
+    const eventFixture = eventFixtures[0];
+
+    Array(100).fill().forEach(_ => {
+      event = new Event(eventFixture);
       this.ui.timeline.append(event.render());
     });
   }
