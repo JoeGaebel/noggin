@@ -5,9 +5,15 @@
 
 @headerHeight: 200px;
 @headerSpacing: 370px;
-@headerBorder: #D9DADD;
+@barBorder: #D9DADD;
+@containerBorder: #E9EAEC;
 @headerBarColor: #E7E8E9;
+@headerContainerFont: #BFC4C9;
 @headerDisplacement: ~"calc(@{headerHeight} + 70px)";
+
+@disabledButtonColor: #DFE1E4;
+@enabledButtonColor: #3B94CE;
+@activeButtonColor: #3374a6;
 
 @timelineMinHeight: ~"calc(100vh - @{headerDisplacement})";
 
@@ -57,17 +63,98 @@ body, #root {
   position: fixed;
   top: 35px;
   left: @headerSpacing;
-  border-radius: 10px;
-  border: 2px @headerBorder solid;
   min-width: 700px;
   z-index: 2;
+}
+
+.header-container {
+  height: 78px;
+  padding: 20px 5px 40px 5px;
+
+  color: @fontColor;
+
+  border-left: 2px #E9EAEC solid;
+  border-right: 2px #E9EAEC solid;
+  border-bottom: 2px #E9EAEC solid;
+  border-radius: 0 0 7px 7px;
+
+  display: flex;
+  flex-direction: column;
+
+  .stats, .buttons, .stat, .button {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    align-items: baseline;
+  }
+
+  .stats, .buttons {
+    height: 50%;
+  }
+
+  .buttons {
+    padding: 0 10px 0 30px;
+  }
+
+  .stats {
+    padding-bottom: 9px;
+    color: @headerContainerFont;
+  }
+
+  .stat  {
+    i {
+      padding-right: 15px;
+      font-size: 28px;
+    }
+
+    .number {
+      font-size: 25px;
+      font-weight: 600;
+      padding-right: 8px;
+    }
+
+    .text {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+
+  .button {
+    padding: 5px 0 5px 0;
+
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    user-select: none;
+
+    &.enabled {
+      background-color: @enabledButtonColor;
+      box-shadow: 1px 1px 1px #B2B1B1;
+      cursor: pointer;
+
+      &:active {
+        background-color: @activeButtonColor;
+      }
+    }
+
+    i {
+      padding-right: 10px;
+      font-size: 36px;
+    }
+
+    margin-right: 20px;
+
+    color: white;
+    background-color: @disabledButtonColor;
+    border-radius: 3px;
+  }
 }
 
 .header-bar {
   color: @fontColor;
   background-color: @headerBarColor;
   height: 58px;
-  border-bottom: 2px @headerBorder solid;
+  border: 2px @barBorder solid;
   border-radius: 7px 7px 0 0;
   display: flex;
 
@@ -126,7 +213,7 @@ body, #root {
 .lightbox {
   position: fixed;
   background: white;
-  border: 3px @headerBorder solid;
+  border: 3px @barBorder solid;
   top: @lightboxSpacing;
   left: @lightboxSpacing;
   width: ~"calc(100vw - calc(2 * @{lightboxSpacing}))";
