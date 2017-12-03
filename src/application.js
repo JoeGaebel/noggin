@@ -30,7 +30,8 @@ class Application {
       titleInput: $('.title-input'),
       typeInput: $('.type-input'),
       descriptionInput: $('.description-input'),
-      closeLightbox: $('#close-lightbox')
+      closeLightbox: $('#close-lightbox'),
+      hidable: $('.hidable'),
     };
 
     this.textInputs = [
@@ -83,11 +84,21 @@ class Application {
     this.renderEvents();
   }
 
+  openLightbox() {
+    this.ui.lightbox.css('display', 'flex');
+    this.ui.hidable.css('opacity', 0.2);
+  }
+
+  closeLightbox() {
+    this.ui.lightbox.css('display', 'none');
+    this.ui.hidable.css('opacity', 1);
+  }
+
   // Events
 
   onAddEventClick() {
     this.resetInputs();
-    this.ui.lightbox.css('display', 'flex');
+    this.openLightbox();
   }
 
   onCreateEventClick() {
@@ -101,12 +112,11 @@ class Application {
 
     const event = new Event(options);
     this.addEvent(event);
-
-    this.ui.lightbox.css('display', 'none');
+    this.closeLightbox()
   }
 
   onCloseLightboxClick() {
-    this.ui.lightbox.css('display', 'none');
+    this.closeLightbox();
   }
 }
 
