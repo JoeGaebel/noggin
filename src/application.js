@@ -11,33 +11,45 @@ class Application {
   onReady() {
     this.initializeUI();
     this.bindUI();
-    this.populateEvents();
+
+    this.events = eventFixtures.map(fixture => {
+      return new Event(fixture);
+    });
+
+    this.renderEvents();
+    this.resetInputs();
   }
 
   initializeUI() {
     this.ui = {
       addEvent: $('#add-event'),
       lightbox: $('.lightbox'),
-      timeline: $('.timeline')
+      timeline: $('.timeline'),
+      createEvent: $('#create-event'),
+      dateInput: $('.date-input'),
+      titleInput: $('.title-input'),
+      typeInput: $('.type-input'),
+      descriptionInput: $('.description-input')
     };
+
+    this.textInputs = [
+      this.ui.titleInput, this.ui.descriptionInput,
+    ]
   }
 
   bindUI() {
-    this.ui.addEvent.click(this.onAddEventClick);
+    this.ui.addEvent.click(this.onAddEventClick.bind(this));
+    this.ui.createEvent.click(this.onCreateEventClick.bind(this));
   }
 
-  populateEvents(){
-    let events = eventFixtures.map(fixture => {
-      return new Event(fixture);
-    });
-
-    events.sort((a, b) => { return a.date - b.date; });
+  renderEvents(){
+    this.events.sort((a, b) => { return a.date - b.date; });
     const today = moment();
     const tomorrow = moment().add(1,'days');
 
     let lastDate = moment("1970");
 
-    events.forEach(event => {
+    this.events.forEach(event => {
       if (event.date.isAfter(lastDate, 'day')) {
         let day;
 
@@ -52,10 +64,44 @@ class Application {
     })
   }
 
+  resetInputs() {
+    this.textInputs.forEach(input => {
+      input.val('');
+    });
+
+    this.ui.typeInput.prop('selectedIndex', 0);
+
+    const today = moment().format("YYYY-MM-DDTHH:mm").toString();
+    this.ui.dateInput.attr('value', today);
+  }
+
+  addEvent(event) {
+    this.events.push(event);
+    this.ui.timeline.empty();
+    this.renderEvents();
+  }
+
   // Events
 
   onAddEventClick() {
-    console.log("button clicked!");
+    this.resetInputs();
+    this.ui.lightbox.css('display', 'flex');
+
+  }
+
+  onCreateEventClick() {
+    const options = {
+      date: this.ui.dateInput.val(),
+      type: this.ui.typeInput.val(),
+      title: this.ui.titleInput.val(),
+      description: this.ui.descriptionInput.val(),
+      author: 'Joe Gaebel'
+    };
+
+    const event = new Event(options);
+    this.addEvent(event);
+
+    this.ui.lightbox.css('display', 'none');
   }
 }
 
