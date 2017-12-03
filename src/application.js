@@ -29,7 +29,8 @@ class Application {
       dateInput: $('.date-input'),
       titleInput: $('.title-input'),
       typeInput: $('.type-input'),
-      descriptionInput: $('.description-input')
+      descriptionInput: $('.description-input'),
+      closeLightbox: $('#close-lightbox')
     };
 
     this.textInputs = [
@@ -40,6 +41,7 @@ class Application {
   bindUI() {
     this.ui.addEvent.click(this.onAddEventClick.bind(this));
     this.ui.createEvent.click(this.onCreateEventClick.bind(this));
+    this.ui.closeLightbox.click(this.onCloseLightboxClick.bind(this));
   }
 
   renderEvents(){
@@ -86,7 +88,6 @@ class Application {
   onAddEventClick() {
     this.resetInputs();
     this.ui.lightbox.css('display', 'flex');
-
   }
 
   onCreateEventClick() {
@@ -101,6 +102,10 @@ class Application {
     const event = new Event(options);
     this.addEvent(event);
 
+    this.ui.lightbox.css('display', 'none');
+  }
+
+  onCloseLightboxClick() {
     this.ui.lightbox.css('display', 'none');
   }
 }
