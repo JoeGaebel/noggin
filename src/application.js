@@ -1,6 +1,7 @@
 import moment from 'moment';
 import Event from './event';
 import Day from './day';
+import './style.less'
 import { events as eventFixtures } from './fixtures';
 
 class Application {

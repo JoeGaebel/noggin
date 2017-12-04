@@ -32,7 +32,7 @@ export const events = [
     date: nextDay,
     type: "appointment",
     title: "Surfing",
-    description: "Surfers paradise is calling!",
+    description: "Surfers Paradise is calling!",
     author: "Joe Gaebel",
   },
 ];
