@@ -31,8 +31,8 @@ export const events = [
   {
     date: nextDay,
     type: "appointment",
-    title: "Work",
-    description: "Back to work!",
+    title: "Surfing",
+    description: "Surfers paradise is calling!",
     author: "Joe Gaebel",
   },
 ];
