@@ -17,7 +17,7 @@ export const events = [
     date: today,
     type: "appointment",
     title: "Build a timeline application",
-    description: "Whip up a solid timeline app!",
+    description: "Spend some time to whip up a solid timeline app!",
     author: "Joe Gaebel",
   },
   {

@@ -39,7 +39,7 @@ body, #root {
   position: fixed;
   top: 227px;
   min-width: 1300px;
-  left: -3.6px;
+  margin-left: -6.7px;
 
   line {
     stroke: rgb(60,151,210);
@@ -59,7 +59,7 @@ body, #root {
 .header {
   background-color: white;
   height: @headerHeight;
-  width: ~"calc(100vw - calc(2 * @{headerSpacing}))";
+  width: ~"calc(100vw - 2 * @{headerSpacing})";
   position: fixed;
   top: 35px;
   left: @headerSpacing;
@@ -120,7 +120,7 @@ body, #root {
   }
 
   .button {
-    padding: 5px 0 5px 0;
+    padding: 5px 10px 5px 10px;
 
     align-items: center;
     font-size: 18px;
@@ -243,11 +243,12 @@ body, #root {
     }
 
     select {
-      height: 24px
+      height: 35px;
     }
 
     textarea {
       height: 56px;
+      resize: none;
     }
 
     .input {
